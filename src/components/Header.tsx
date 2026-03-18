@@ -17,36 +17,47 @@ export default function Header({ className }: HeaderProps) {
   }, []);
 
   const links = [
-    { label: "О нас", href: "#about" },
     { label: "Возможности", href: "#features" },
     { label: "Скачать", href: "#download" },
-    { label: "Присоединиться", href: "#contact" },
+    { label: "О нас", href: "#about" },
   ];
 
   return (
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-          scrolled ? "bg-black/80 backdrop-blur-md shadow-md" : "bg-transparent"
+          scrolled
+            ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-neutral-100"
+            : "bg-transparent"
         } ${className ?? ""}`}
       >
-        <div className="flex justify-between items-center px-6 py-4">
-          <div className="text-white text-sm uppercase tracking-widest font-bold">connectly</div>
+        <div className="flex justify-between items-center px-6 py-4 max-w-6xl mx-auto">
+          <div className={`text-lg font-bold transition-colors duration-300 ${scrolled ? "text-neutral-900" : "text-white"}`}>
+            <span className="text-brand">C</span>onnectly
+          </div>
 
-          <nav className="hidden md:flex gap-8">
+          <nav className="hidden md:flex gap-8 items-center">
             {links.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
-                className="text-white/80 hover:text-white transition-colors duration-200 uppercase text-xs tracking-wide"
+                className={`text-sm font-medium transition-colors duration-200 ${
+                  scrolled ? "text-neutral-600 hover:text-neutral-900" : "text-white/80 hover:text-white"
+                }`}
               >
                 {l.label}
               </a>
             ))}
+            <a
+              href="#register"
+              className="bg-brand text-white px-5 py-2 rounded-xl text-sm font-semibold hover:bg-brand-dark transition-colors duration-200"
+            >
+              Войти
+            </a>
           </nav>
 
           <button
-            className="md:hidden text-white p-1 cursor-pointer"
+            className={`md:hidden p-1 cursor-pointer transition-colors ${scrolled ? "text-neutral-900" : "text-white"}`}
             onClick={() => setMenuOpen((v) => !v)}
             aria-label="Открыть меню"
           >
@@ -62,24 +73,34 @@ export default function Header({ className }: HeaderProps) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="fixed top-0 left-0 right-0 bottom-0 z-30 bg-black flex flex-col items-center justify-center gap-8"
+            className="fixed inset-0 z-30 bg-white flex flex-col items-center justify-center gap-6"
           >
             <button
-              className="absolute top-5 right-6 text-white cursor-pointer"
+              className="absolute top-5 right-6 text-neutral-700 cursor-pointer"
               onClick={() => setMenuOpen(false)}
             >
               <Icon name="X" size={24} />
             </button>
+            <div className="text-2xl font-bold mb-4">
+              <span className="text-brand">C</span>onnectly
+            </div>
             {links.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
                 onClick={() => setMenuOpen(false)}
-                className="text-white text-2xl uppercase tracking-widest hover:text-neutral-300 transition-colors"
+                className="text-neutral-800 text-xl font-medium hover:text-brand transition-colors"
               >
                 {l.label}
               </a>
             ))}
+            <a
+              href="#register"
+              onClick={() => setMenuOpen(false)}
+              className="bg-brand text-white px-8 py-3 rounded-xl text-base font-semibold hover:bg-brand-dark transition-colors mt-2"
+            >
+              Войти
+            </a>
           </motion.div>
         )}
       </AnimatePresence>

@@ -23,9 +23,9 @@ export default {
 			},
 			colors: {
 				brand: {
-					DEFAULT: '#6366f1',
-					light: '#818cf8',
-					dark: '#4338ca',
+					DEFAULT: '#2AABEE',
+					light: '#54c0f5',
+					dark: '#1a8bc4',
 				},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',

@@ -58,19 +58,28 @@ export default function Hero() {
 
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60 z-[1]" />
 
-      <div className="relative z-10 text-center text-white px-4">
-        <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold tracking-tight mb-6">
-          БУДЬ НА СВЯЗИ
+      <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+        <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 text-sm mb-6">
+          <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+          Уже 1 000 000+ пользователей онлайн
+        </div>
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-5 leading-tight">
+          Будь на связи<br />с теми, кто важен
         </h1>
-        <p className="text-lg md:text-xl max-w-2xl mx-auto px-6 opacity-90 mb-10">
-          Общайся с теми, кто важен. Находи новых друзей и оставайся рядом — всегда и везде
+        <p className="text-base md:text-lg max-w-xl mx-auto text-white/80 mb-10 leading-relaxed">
+          Общайся, делись моментами и находи новых друзей — быстро, удобно и безопасно
         </p>
-        <button
-          onClick={() => { setOpen(true); setSubmitted(false); setError(""); setForm({ name: "", email: "", password: "" }); }}
-          className="bg-brand text-white px-8 py-4 text-sm uppercase tracking-widest font-semibold hover:bg-brand-dark transition-colors duration-300 cursor-pointer rounded-sm shadow-lg"
-        >
-          Зарегистрироваться
-        </button>
+        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <button
+            onClick={() => { setOpen(true); setSubmitted(false); setError(""); setForm({ name: "", email: "", password: "" }); }}
+            className="bg-brand text-white px-8 py-3.5 text-sm font-semibold hover:bg-brand-dark transition-colors duration-200 cursor-pointer rounded-xl shadow-lg"
+          >
+            Зарегистрироваться бесплатно
+          </button>
+          <a href="#download" className="bg-white/15 backdrop-blur-sm border border-white/20 text-white px-8 py-3.5 text-sm font-semibold hover:bg-white/25 transition-colors duration-200 cursor-pointer rounded-xl">
+            Скачать приложение
+          </a>
+        </div>
       </div>
 
       <AnimatePresence>
@@ -83,71 +92,69 @@ export default function Hero() {
             onClick={() => setOpen(false)}
           >
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 40 }}
-              transition={{ duration: 0.3 }}
-              className="bg-white w-full max-w-md p-8 relative"
+              initial={{ opacity: 0, scale: 0.96, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.96, y: 20 }}
+              transition={{ duration: 0.25 }}
+              className="bg-white w-full max-w-md p-8 relative rounded-2xl shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               <button
                 onClick={() => setOpen(false)}
-                className="absolute top-4 right-4 text-neutral-400 hover:text-black transition-colors text-xl leading-none cursor-pointer"
+                className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full bg-neutral-100 text-neutral-500 hover:bg-neutral-200 transition-colors cursor-pointer text-lg leading-none"
               >
                 ✕
               </button>
 
               {submitted ? (
-                <div className="text-center py-8">
-                  <p className="text-2xl font-bold mb-2">Добро пожаловать!</p>
-                  <p className="text-neutral-500">Вы успешно зарегистрировались в Connectly.</p>
+                <div className="text-center py-6">
+                  <div className="w-16 h-16 bg-brand/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <span className="text-3xl">🎉</span>
+                  </div>
+                  <p className="text-xl font-bold mb-2">Добро пожаловать!</p>
+                  <p className="text-neutral-500 text-sm">Вы успешно зарегистрировались в Connectly.</p>
                 </div>
               ) : (
                 <>
-                  <h2 className="text-2xl font-bold tracking-tight mb-1">Создать аккаунт</h2>
-                  <p className="text-neutral-500 text-sm mb-6">Присоединяйтесь к Connectly уже сегодня</p>
-                  <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                    <div>
-                      <label className="text-xs uppercase tracking-wide text-neutral-500 block mb-1">Имя</label>
-                      <input
-                        type="text"
-                        required
-                        placeholder="Ваше имя"
-                        value={form.name}
-                        onChange={(e) => setForm({ ...form, name: e.target.value })}
-                        className="w-full border border-neutral-300 px-4 py-2.5 text-sm focus:outline-none focus:border-black transition-colors"
-                      />
-                    </div>
-                    <div>
-                      <label className="text-xs uppercase tracking-wide text-neutral-500 block mb-1">Email</label>
-                      <input
-                        type="email"
-                        required
-                        placeholder="you@example.com"
-                        value={form.email}
-                        onChange={(e) => setForm({ ...form, email: e.target.value })}
-                        className="w-full border border-neutral-300 px-4 py-2.5 text-sm focus:outline-none focus:border-black transition-colors"
-                      />
-                    </div>
-                    <div>
-                      <label className="text-xs uppercase tracking-wide text-neutral-500 block mb-1">Пароль</label>
-                      <input
-                        type="password"
-                        required
-                        placeholder="Минимум 8 символов"
-                        value={form.password}
-                        onChange={(e) => setForm({ ...form, password: e.target.value })}
-                        className="w-full border border-neutral-300 px-4 py-2.5 text-sm focus:outline-none focus:border-black transition-colors"
-                      />
-                    </div>
-                    {error && <p className="text-red-500 text-sm">{error}</p>}
+                  <div className="w-12 h-12 bg-brand rounded-2xl flex items-center justify-center mb-5">
+                    <span className="text-white text-xl font-bold">C</span>
+                  </div>
+                  <h2 className="text-2xl font-bold mb-1">Создать аккаунт</h2>
+                  <p className="text-neutral-500 text-sm mb-6">Присоединяйтесь к Connectly — это бесплатно</p>
+                  <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+                    <input
+                      type="text"
+                      required
+                      placeholder="Ваше имя"
+                      value={form.name}
+                      onChange={(e) => setForm({ ...form, name: e.target.value })}
+                      className="w-full bg-neutral-50 border border-neutral-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all"
+                    />
+                    <input
+                      type="email"
+                      required
+                      placeholder="Email"
+                      value={form.email}
+                      onChange={(e) => setForm({ ...form, email: e.target.value })}
+                      className="w-full bg-neutral-50 border border-neutral-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all"
+                    />
+                    <input
+                      type="password"
+                      required
+                      placeholder="Пароль (минимум 8 символов)"
+                      value={form.password}
+                      onChange={(e) => setForm({ ...form, password: e.target.value })}
+                      className="w-full bg-neutral-50 border border-neutral-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all"
+                    />
+                    {error && <p className="text-red-500 text-sm bg-red-50 rounded-xl px-3 py-2">{error}</p>}
                     <button
                       type="submit"
                       disabled={loading}
-                      className="bg-brand text-white px-4 py-3 text-sm uppercase tracking-widest hover:bg-brand-dark transition-colors duration-300 cursor-pointer mt-2 disabled:opacity-50 rounded-sm"
+                      className="bg-brand text-white px-4 py-3 text-sm font-semibold hover:bg-brand-dark transition-colors duration-200 cursor-pointer mt-1 disabled:opacity-50 rounded-xl"
                     >
                       {loading ? "Загрузка..." : "Зарегистрироваться"}
                     </button>
+                    <p className="text-xs text-neutral-400 text-center">Регистрируясь, вы соглашаетесь с условиями использования</p>
                   </form>
                 </>
               )}

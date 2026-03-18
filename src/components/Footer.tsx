@@ -1,65 +1,67 @@
+import Icon from "@/components/ui/icon";
+
 export default function Footer() {
   return (
-    <div
-      className="relative h-[400px] sm:h-[600px] lg:h-[800px] max-h-[800px]"
-      style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
-    >
-      <div className="relative h-[calc(100vh+400px)] sm:h-[calc(100vh+600px)] lg:h-[calc(100vh+800px)] -top-[100vh]">
-        <div className="h-[400px] sm:h-[600px] lg:h-[800px] sticky top-[calc(100vh-400px)] sm:top-[calc(100vh-600px)] lg:top-[calc(100vh-800px)]">
-          <div className="bg-neutral-900 py-4 sm:py-6 lg:py-8 px-4 sm:px-6 h-full w-full flex flex-col justify-between">
-            <div className="flex shrink-0 gap-8 sm:gap-12 lg:gap-20">
-              <div className="flex flex-col gap-1 sm:gap-2">
-                <h3 className="mb-1 sm:mb-2 uppercase text-neutral-400 text-xs sm:text-sm">Платформа</h3>
+    <footer className="bg-neutral-950 text-white pt-16 pb-8 px-6">
+      <div className="max-w-6xl mx-auto">
+        <div className="flex flex-col md:flex-row gap-12 mb-12">
+          <div className="flex-1 max-w-xs">
+            <div className="text-xl font-bold mb-3">
+              <span className="text-brand">C</span>onnectly
+            </div>
+            <p className="text-neutral-400 text-sm leading-relaxed mb-5">
+              Социальная сеть для общения. Будь на связи с теми, кто важен — всегда и везде.
+            </p>
+            <div className="flex gap-3">
+              {["MessageCircle", "Send", "Globe"].map((icon) => (
                 <a
-                  href="#about"
-                  className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base"
+                  key={icon}
+                  href="#"
+                  className="w-9 h-9 bg-neutral-800 hover:bg-brand rounded-xl flex items-center justify-center transition-colors duration-200"
                 >
-                  О нас
+                  <Icon name={icon as "MessageCircle"} size={16} className="text-white" />
                 </a>
-                <a
-                  href="#features"
-                  className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base"
-                >
-                  Возможности
-                </a>
-                <a
-                  href="#contact"
-                  className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base"
-                >
-                  Контакты
-                </a>
-              </div>
-              <div className="flex flex-col gap-1 sm:gap-2">
-                <h3 className="mb-1 sm:mb-2 uppercase text-neutral-400 text-xs sm:text-sm">Сообщество</h3>
-                <a
-                  href="#blog"
-                  className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base"
-                >
-                  Блог
-                </a>
-                <a
-                  href="#events"
-                  className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base"
-                >
-                  События
-                </a>
-                <a
-                  href="#join"
-                  className="text-white hover:text-neutral-400 transition-colors duration-300 text-sm sm:text-base"
-                >
-                  Вступить
-                </a>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex gap-12 md:gap-20 flex-wrap">
+            <div>
+              <h3 className="text-xs font-semibold text-neutral-400 uppercase tracking-widest mb-4">Платформа</h3>
+              <div className="flex flex-col gap-2.5">
+                {["О нас", "Возможности", "Безопасность", "Контакты"].map((l) => (
+                  <a key={l} href="#" className="text-sm text-neutral-300 hover:text-white transition-colors">{l}</a>
+                ))}
               </div>
             </div>
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 sm:gap-0">
-              <h1 className="text-[18vw] sm:text-[16vw] lg:text-[14vw] leading-[0.8] mt-4 sm:mt-6 lg:mt-10 text-white font-bold tracking-tight">
-                CONNECTLY
-              </h1>
-              <p className="text-white text-sm sm:text-base">{new Date().getFullYear()} Connectly</p>
+            <div>
+              <h3 className="text-xs font-semibold text-neutral-400 uppercase tracking-widest mb-4">Сообщество</h3>
+              <div className="flex flex-col gap-2.5">
+                {["Блог", "События", "Правила", "Вступить"].map((l) => (
+                  <a key={l} href="#" className="text-sm text-neutral-300 hover:text-white transition-colors">{l}</a>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h3 className="text-xs font-semibold text-neutral-400 uppercase tracking-widest mb-4">Скачать</h3>
+              <div className="flex flex-col gap-2.5">
+                {["App Store", "Google Play", "Windows", "macOS"].map((l) => (
+                  <a key={l} href="#" className="text-sm text-neutral-300 hover:text-white transition-colors">{l}</a>
+                ))}
+              </div>
             </div>
           </div>
         </div>
+
+        <div className="border-t border-neutral-800 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-neutral-500 text-xs">© {new Date().getFullYear()} Connectly. Все права защищены.</p>
+          <div className="flex gap-6">
+            <a href="#" className="text-neutral-500 hover:text-neutral-300 text-xs transition-colors">Конфиденциальность</a>
+            <a href="#" className="text-neutral-500 hover:text-neutral-300 text-xs transition-colors">Условия</a>
+            <a href="#" className="text-neutral-500 hover:text-neutral-300 text-xs transition-colors">Cookies</a>
+          </div>
+        </div>
       </div>
-    </div>
+    </footer>
   );
 }
