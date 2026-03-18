@@ -11,7 +11,7 @@ export default function Download() {
         <div className="flex flex-col sm:flex-row gap-4">
           <a
             href="#"
-            className="flex items-center gap-3 bg-white text-black px-6 py-4 hover:bg-neutral-200 transition-colors duration-300 w-fit"
+            className="flex items-center gap-3 bg-brand text-white px-6 py-4 hover:bg-brand-dark transition-colors duration-300 w-fit rounded-sm"
           >
             <Icon name="Apple" size={24} />
             <div>
@@ -21,7 +21,7 @@ export default function Download() {
           </a>
           <a
             href="#"
-            className="flex items-center gap-3 border border-white text-white px-6 py-4 hover:bg-white hover:text-black transition-colors duration-300 w-fit"
+            className="flex items-center gap-3 border border-brand text-white px-6 py-4 hover:bg-brand transition-colors duration-300 w-fit rounded-sm"
           >
             <Icon name="Smartphone" size={24} />
             <div>
@@ -37,8 +37,8 @@ export default function Download() {
         <div className="relative w-64 lg:w-80">
           <div className="bg-neutral-800 rounded-3xl p-6 shadow-2xl">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center">
-                <Icon name="MessageCircle" size={20} className="text-black" />
+              <div className="w-10 h-10 rounded-full bg-brand flex items-center justify-center">
+                <Icon name="MessageCircle" size={20} className="text-white" />
               </div>
               <div>
                 <p className="text-white font-semibold text-sm">Connectly</p>
@@ -49,8 +49,8 @@ export default function Download() {
               <div className="bg-neutral-700 rounded-2xl rounded-tl-sm px-4 py-2.5 w-fit max-w-[80%]">
                 <p className="text-white text-sm">Привет! Как дела? 👋</p>
               </div>
-              <div className="bg-white rounded-2xl rounded-tr-sm px-4 py-2.5 w-fit max-w-[80%] ml-auto">
-                <p className="text-black text-sm">Всё отлично, ты как?</p>
+              <div className="bg-brand rounded-2xl rounded-tr-sm px-4 py-2.5 w-fit max-w-[80%] ml-auto">
+                <p className="text-white text-sm">Всё отлично, ты как?</p>
               </div>
               <div className="bg-neutral-700 rounded-2xl rounded-tl-sm px-4 py-2.5 w-fit max-w-[80%]">
                 <p className="text-white text-sm">Встретимся сегодня? 🎉</p>
@@ -58,7 +58,7 @@ export default function Download() {
             </div>
             <div className="mt-4 flex items-center gap-2 bg-neutral-900 rounded-full px-4 py-2">
               <p className="text-neutral-500 text-sm flex-1">Написать...</p>
-              <Icon name="Send" size={16} className="text-white" />
+              <Icon name="Send" size={16} className="text-brand" />
             </div>
           </div>
         </div>

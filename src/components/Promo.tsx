@@ -25,13 +25,15 @@ export default function Promo() {
         </motion.div>
       </div>
 
-      <h3 className="absolute top-12 right-6 text-white uppercase z-10 text-sm md:text-base lg:text-lg">
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/40 z-[1]" />
+
+      <h3 className="absolute top-12 right-6 text-white/90 uppercase z-10 text-xs md:text-sm tracking-widest">
         Твой мир, твои люди
       </h3>
 
-      <p className="absolute bottom-12 right-6 text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-5xl z-10">
+      <p className="absolute bottom-12 left-6 right-6 md:right-auto text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl max-w-full md:max-w-lg lg:max-w-xl xl:max-w-3xl z-10 leading-tight drop-shadow-lg">
         Находи тех, кто разделяет твои интересы. Создавай сообщества, делись моментами
-        и строй настоящие связи — онлайн и в реальной жизни.
+        и строй настоящие связи.
       </p>
     </div>
   );

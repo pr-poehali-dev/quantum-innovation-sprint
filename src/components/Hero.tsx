@@ -56,8 +56,10 @@ export default function Hero() {
         />
       </motion.div>
 
-      <div className="relative z-10 text-center text-white">
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6">
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60 z-[1]" />
+
+      <div className="relative z-10 text-center text-white px-4">
+        <h1 className="text-4xl md:text-6xl lg:text-8xl font-bold tracking-tight mb-6">
           БУДЬ НА СВЯЗИ
         </h1>
         <p className="text-lg md:text-xl max-w-2xl mx-auto px-6 opacity-90 mb-10">
@@ -65,7 +67,7 @@ export default function Hero() {
         </p>
         <button
           onClick={() => { setOpen(true); setSubmitted(false); setError(""); setForm({ name: "", email: "", password: "" }); }}
-          className="bg-white text-black px-8 py-3 text-sm uppercase tracking-wide font-semibold hover:bg-neutral-200 transition-colors duration-300 cursor-pointer"
+          className="bg-brand text-white px-8 py-4 text-sm uppercase tracking-widest font-semibold hover:bg-brand-dark transition-colors duration-300 cursor-pointer rounded-sm shadow-lg"
         >
           Зарегистрироваться
         </button>
@@ -142,7 +144,7 @@ export default function Hero() {
                     <button
                       type="submit"
                       disabled={loading}
-                      className="bg-black text-white px-4 py-3 text-sm uppercase tracking-wide hover:bg-neutral-800 transition-colors duration-300 cursor-pointer mt-2 disabled:opacity-50"
+                      className="bg-brand text-white px-4 py-3 text-sm uppercase tracking-widest hover:bg-brand-dark transition-colors duration-300 cursor-pointer mt-2 disabled:opacity-50 rounded-sm"
                     >
                       {loading ? "Загрузка..." : "Зарегистрироваться"}
                     </button>

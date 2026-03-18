@@ -13,7 +13,7 @@ export default function Featured() {
         <p className="text-2xl lg:text-4xl mb-8 text-neutral-900 leading-tight">
           Живые чаты, истории, ленты и сообщества — всё, чтобы ты всегда был рядом с теми, кто важен. Connectly соединяет людей по-настоящему.
         </p>
-        <button className="bg-black text-white border border-black px-4 py-2 text-sm transition-all duration-300 hover:bg-white hover:text-black cursor-pointer w-fit uppercase tracking-wide">
+        <button className="bg-brand text-white px-6 py-3 text-sm transition-all duration-300 hover:bg-brand-dark cursor-pointer w-fit uppercase tracking-widest rounded-sm">
           Начать общение
         </button>
       </div>
