@@ -12,7 +12,7 @@ export default function Download() {
               Мессенджер в твоём кармане
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4 leading-tight">
-              Скачай Connectly<br />и общайся везде
+              Скачай Rom-Muerte<br />и общайся везде
             </h2>
             <p className="text-white/70 text-base mb-8 leading-relaxed max-w-sm">
               Доступно для iOS и Android. Бесплатно и без рекламы.
@@ -48,7 +48,7 @@ export default function Download() {
                   <Icon name="MessageCircle" size={16} className="text-white" />
                 </div>
                 <div>
-                  <p className="text-neutral-900 font-semibold text-xs">Connectly</p>
+                  <p className="text-neutral-900 font-semibold text-xs">Rom-Muerte</p>
                   <p className="text-green-500 text-[10px] font-medium">● Онлайн</p>
                 </div>
               </div>

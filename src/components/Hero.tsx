@@ -112,7 +112,7 @@ export default function Hero() {
                     <span className="text-3xl">🎉</span>
                   </div>
                   <p className="text-xl font-bold mb-2">Добро пожаловать!</p>
-                  <p className="text-neutral-500 text-sm">Вы успешно зарегистрировались в Connectly.</p>
+                  <p className="text-neutral-500 text-sm">Вы успешно зарегистрировались в Rom-Muerte.</p>
                 </div>
               ) : (
                 <>
@@ -120,7 +120,7 @@ export default function Hero() {
                     <span className="text-white text-xl font-bold">C</span>
                   </div>
                   <h2 className="text-2xl font-bold mb-1">Создать аккаунт</h2>
-                  <p className="text-neutral-500 text-sm mb-6">Присоединяйтесь к Connectly — это бесплатно</p>
+                  <p className="text-neutral-500 text-sm mb-6">Присоединяйтесь к Rom-Muerte — это бесплатно</p>
                   <form onSubmit={handleSubmit} className="flex flex-col gap-3">
                     <input
                       type="text"

@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row gap-12 mb-12">
           <div className="flex-1 max-w-xs">
             <div className="text-xl font-bold mb-3">
-              <span className="text-brand">C</span>onnectly
+              Rom-Muerte
             </div>
             <p className="text-neutral-400 text-sm leading-relaxed mb-5">
               Социальная сеть для общения. Будь на связи с теми, кто важен — всегда и везде.
@@ -54,7 +54,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-neutral-800 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-neutral-500 text-xs">© {new Date().getFullYear()} Connectly. Все права защищены.</p>
+          <p className="text-neutral-500 text-xs">© {new Date().getFullYear()} Rom-Muerte. Все права защищены.</p>
           <div className="flex gap-6">
             <a href="#" className="text-neutral-500 hover:text-neutral-300 text-xs transition-colors">Конфиденциальность</a>
             <a href="#" className="text-neutral-500 hover:text-neutral-300 text-xs transition-colors">Условия</a>
